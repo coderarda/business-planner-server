@@ -28,7 +28,7 @@ sequelize
         console.log("Error connecting: " + err);
     });
 
-sequelize.define("Developer", {
+const Developer = sequelize.define("Developer", {
     id:{
         type: DataTypes.INTEGER,
         autoIncrement: true,
@@ -44,11 +44,15 @@ sequelize.define("Developer", {
     }
 });
 
-sequelize.define("Team", {
+async () => {
+    const dev = Developer.create({ firstName: "Arda", lastName: "Akcagöz" });
+    if (dev instanceof Developer) {
+        await dev.save();
+    }
+}
 
-});
 
 
 app.get('/', (req, res) => {
-    
+    res.send(JSON.stringify(new CalendarEvent(new Date(), "default title", "desc", 0)));
 });
