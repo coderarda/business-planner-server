@@ -15,7 +15,7 @@ app.listen(3000, () => console.log("Listening at port 5000!"));
 const sequelize = new Sequelize({
     username: "root",
     password: process.env.password,
-    database: "business-planner",
+    database: process.env.database,
     dialect: "mysql",
 });
 
