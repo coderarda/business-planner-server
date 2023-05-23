@@ -9,13 +9,13 @@ dotenv.config();
 const app = Express();
 app.use(cors());
 
-app.listen(5000, () => console.log("Listening at port 5000!"));
+app.listen(3000, () => console.log("Listening at port 5000!"));
 
 
 const sequelize = new Sequelize({
     username: "root",
     password: process.env.password,
-    database: "business-planner",
+    database: process.env.database,
     dialect: "mysql",
 });
 
@@ -54,5 +54,11 @@ async () => {
 
 
 app.get('/', (req, res) => {
-    res.send(JSON.stringify(new CalendarEvent(new Date(), "default title", "desc", 0)));
+    const obj : CalendarEvent = {
+        title: "default",
+        description: "Default desc",
+        date: new Date().toUTCString(),
+        id:1,
+    };
+    res.send(JSON.stringify(obj));
 });
