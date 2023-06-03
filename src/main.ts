@@ -52,7 +52,6 @@ async () => {
 }
 
 
-
 app.get('/', (req, res) => {
     const obj : CalendarEvent = {
         title: "default",
