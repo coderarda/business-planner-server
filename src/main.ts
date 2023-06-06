@@ -9,7 +9,7 @@ dotenv.config();
 const app = Express();
 app.use(cors());
 
-app.listen(3000, () => console.log("Listening at port 5000!"));
+app.listen(3000, () => console.log("Listening at port 3000!"));
 
 
 const sequelize = new Sequelize({
