@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
+    "start": "node --loader ts-node/esm src/main.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
