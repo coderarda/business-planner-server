@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
     const obj: CalendarEvent = {
         title: "default",
         description: "Default desc",
-        date: new Date().toUTCString(),
+        date: Date.parse("2025-01-01").toString(),
         id: 1,
     };
     res.send(JSON.stringify(obj));
